@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "commandbot",
+  "version": "1.0.1-DEV",
+  "name": "CommandBot",
+  "description": "CommandBot mod!",
+  "authors": [
+    "DarkCray_"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/commandbot/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.darkcray_.commandbot.CommandBotClient"
+    ]
+  },
+  "mixins": [
+    "commandbot.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.10"
+  }
+}

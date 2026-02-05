@@ -9,8 +9,10 @@ public enum KeyAction {
 
     FORWARD(() -> MinecraftClient.getInstance().options.forwardKey),
     BACK(() -> MinecraftClient.getInstance().options.backKey),
+    JUMP(() -> MinecraftClient.getInstance().options.jumpKey),
     LEFT(() -> MinecraftClient.getInstance().options.leftKey),
     RIGHT(() -> MinecraftClient.getInstance().options.rightKey),
+    ATTACK(() -> MinecraftClient.getInstance().options.attackKey),
     SHIFT(() -> MinecraftClient.getInstance().options.sneakKey);
 
     private final KeySupplier keySupplier;

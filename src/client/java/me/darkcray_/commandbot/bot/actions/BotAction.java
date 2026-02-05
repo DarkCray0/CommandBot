@@ -16,9 +16,14 @@ public class BotAction {
         return new BotAction(5, key::press, key::release, false);
     }
 
-    public static BotAction hotbar(KeyAction key) {
-        System.out.println("1");
-        return new BotAction(1, key::click, key::release, false);
+    public static BotAction hotbar(Integer slot) {
+        return new BotAction(2,
+                () -> {
+                    assert MinecraftClient.getInstance().player != null;
+                    MinecraftClient.getInstance().player.getInventory().setSelectedSlot(slot);
+                },
+                () -> {}, false
+        );
     }
 
     public static BotAction camera(CameraAction cam) {
@@ -27,8 +32,11 @@ public class BotAction {
 
     public static BotAction drop() {
         return new BotAction(2,
-                () -> MinecraftClient.getInstance().options.dropKey.setPressed(true),
-                () -> MinecraftClient.getInstance().options.dropKey.setPressed(false), false
+                () -> {
+                    assert MinecraftClient.getInstance().player != null;
+                    MinecraftClient.getInstance().player.dropSelectedItem(true);
+                },
+                () -> {}, false
         );
     }
 

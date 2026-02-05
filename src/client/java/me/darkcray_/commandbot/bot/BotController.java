@@ -24,10 +24,6 @@ public class BotController {
                 return;
             }
         }
-        if (type == CommandType.CHAT) {
-            BotCommand cmd = new BotCommand("wait", CommandType.OTHER, () -> BotAction.hotbar(KeyAction.HOTBAR_1));
-            QUEUE.add(cmd.createAction(20));
-        }
         QUEUE.add(action);
     }
 

@@ -1,6 +1,7 @@
 package me.darkcray_.commandbot.bot;
 
 import me.darkcray_.commandbot.bot.actions.BotAction;
+import me.darkcray_.commandbot.bot.actions.KeyAction;
 import me.darkcray_.commandbot.bot.utils.ChatMassage;
 import me.darkcray_.commandbot.protection.GriefProtection;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -22,6 +23,10 @@ public class BotController {
                 ChatMassage.sendChatMessage("Данное действие запрещено программой!");
                 return;
             }
+        }
+        if (type == CommandType.CHAT) {
+            BotCommand cmd = new BotCommand("wait", CommandType.OTHER, () -> BotAction.hotbar(KeyAction.HOTBAR_1));
+            QUEUE.add(cmd.createAction(20));
         }
         QUEUE.add(action);
     }

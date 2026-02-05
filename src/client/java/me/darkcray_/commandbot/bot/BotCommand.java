@@ -26,11 +26,11 @@ public record BotCommand(
             new BotCommand("слот-2", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_2)),
             new BotCommand("слот-3", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_3)),
             new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_4)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_5)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_6)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_7)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_8)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_9)),
+            new BotCommand("слот-5", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_5)),
+            new BotCommand("слот-6", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_6)),
+            new BotCommand("слот-7", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_7)),
+            new BotCommand("слот-8", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_8)),
+            new BotCommand("слот-9", CommandType.HOTBAR, () -> BotAction.hotbar(KeyAction.HOTBAR_9)),
 
             new BotCommand("налево", CommandType.CAMERA, () -> BotAction.camera(CameraAction.LEFT)),
             new BotCommand("направо", CommandType.CAMERA, () -> BotAction.camera(CameraAction.RIGHT)),
@@ -39,7 +39,8 @@ public record BotCommand(
 
             new BotCommand("лкм", CommandType.CLICK, BotAction::leftClick),
             new BotCommand("пкм", CommandType.CLICK, BotAction::rightClick),
-            new BotCommand("shift", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
+            new BotCommand("присесть", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
+            new BotCommand("выбросить", CommandType.OTHER, BotAction::drop),
 
             new BotCommand("сесть", CommandType.CHAT, () -> BotAction.chat("gsit")),
             new BotCommand("лечь", CommandType.CHAT, () -> BotAction.chat("glay")),

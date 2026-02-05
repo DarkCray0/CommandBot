@@ -5,5 +5,6 @@ public enum CommandType {
     CAMERA,
     HOTBAR,
     CLICK,
-    CHAT
+    CHAT,
+    OTHER
 }

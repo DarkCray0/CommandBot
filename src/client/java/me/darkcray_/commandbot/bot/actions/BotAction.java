@@ -1,7 +1,5 @@
 package me.darkcray_.commandbot.bot.actions;
 
-import me.darkcray_.commandbot.bot.utils.ChatMassage;
-import me.darkcray_.commandbot.protection.GriefProtection;
 import net.minecraft.client.MinecraftClient;
 
 public class BotAction {
@@ -19,11 +17,19 @@ public class BotAction {
     }
 
     public static BotAction hotbar(KeyAction key) {
+        System.out.println("1");
         return new BotAction(1, key::click, key::release, false);
     }
 
     public static BotAction camera(CameraAction cam) {
         return new BotAction(2, cam::apply, () -> {}, true);
+    }
+
+    public static BotAction drop() {
+        return new BotAction(2,
+                () -> MinecraftClient.getInstance().options.dropKey.setPressed(true),
+                () -> MinecraftClient.getInstance().options.dropKey.setPressed(false), false
+        );
     }
 
     public static BotAction leftClick() {

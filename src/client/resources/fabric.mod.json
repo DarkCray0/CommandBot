@@ -1,14 +1,17 @@
 {
   "schemaVersion": 1,
   "id": "commandbot",
-  "version": "1.0.1-DEV",
+  "version": "${mod_version}",
   "name": "CommandBot",
-  "description": "CommandBot mod!",
-  "authors": [
-    "DarkCray_"
-  ],
-  "contact": {},
-  "license": "All-Rights-Reserved",
+  "description": "CommandBot is a client-side Fabric mod that allows you to control your Minecraft player using chat commands, turning your character into a programmable bot.",
+  "authors": ["DarkCray_"],
+  "contributors": ["minoigor"],
+  "contact": {
+    "homepage": "https://github.com/DarkCray0/CommandBot",
+    "issues": "https://github.com/DarkCray0/CommandBot/issues",
+    "sources": "https://github.com/DarkCray0/CommandBot"
+  },
+  "license": "MIT",
   "icon": "assets/commandbot/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -20,8 +23,18 @@
     "commandbot.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.4",
+    "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
-    "minecraft": "1.21.10"
+    "minecraft": "${minecraft_version}"
+  },
+  "custom" : {
+    "modmenu": {
+      "links": {
+        "modmenu.donate": "https://ko-fi.com/darkcray_",
+        "modmenu.discord": "https://caffeinemc.net/discord",
+        "modmenu.github_releases": "https://github.com/DarkCray0/CommandBot/releases",
+        "modmenu.kofi": "https://ko-fi.com/darkcray_"
+      }
+    }
   }
 }

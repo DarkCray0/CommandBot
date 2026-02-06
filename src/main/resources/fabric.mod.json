@@ -7,7 +7,7 @@
   "authors": ["DarkCray_"],
   "contributors": ["minoigor"],
   "contact": {
-    "homepage": "https://github.com/DarkCray0/CommandBot",
+    "homepage": "https://github.com/DarkCray0/CommandBot/wiki",
     "issues": "https://github.com/DarkCray0/CommandBot/issues",
     "sources": "https://github.com/DarkCray0/CommandBot"
   },
@@ -33,7 +33,8 @@
         "modmenu.donate": "https://ko-fi.com/darkcray_",
         "modmenu.discord": "https://caffeinemc.net/discord",
         "modmenu.github_releases": "https://github.com/DarkCray0/CommandBot/releases",
-        "modmenu.kofi": "https://ko-fi.com/darkcray_"
+        "modmenu.kofi": "https://ko-fi.com/darkcray_",
+        "modmenu.wiki": "https://github.com/DarkCray0/CommandBot/wiki"
       }
     }
   }

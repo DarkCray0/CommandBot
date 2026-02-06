@@ -48,12 +48,14 @@ processResources {
     inputs.property "version", project.version
     inputs.property "minecraft_version", project.findProperty("minecraft_version")
     inputs.property "fabric_loader_version", project.findProperty("fabric_loader_version")
+    inputs.property "mod_version", project.findProperty("mod_version")
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version,
                 "minecraft_version": project.findProperty("minecraft_version"),
-                "fabric_loader_version": project.findProperty("fabric_loader_version")
+                "fabric_loader_version": project.findProperty("fabric_loader_version"),
+                "mod_version": project.findProperty("mod_version")
     }
 }
 

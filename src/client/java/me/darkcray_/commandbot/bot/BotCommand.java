@@ -41,7 +41,7 @@ public record BotCommand(
             new BotCommand("пкм", CommandType.CLICK, BotAction::rightClick),
             new BotCommand("удар", CommandType.CLICK, () -> BotAction.move(KeyAction.ATTACK)),
             new BotCommand("присесть", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
-            new BotCommand("присесть", CommandType.MOVE, () -> BotAction.move(KeyAction.JUMP)),
+            new BotCommand("прыгнуть", CommandType.MOVE, () -> BotAction.move(KeyAction.JUMP)),
             new BotCommand("выбросить", CommandType.OTHER, BotAction::drop),
 
             new BotCommand("сесть", CommandType.CHAT, () -> BotAction.chat("gsit")),

@@ -1,7 +1,7 @@
 package me.darkcray_.commandbot.bot;
 
 import me.darkcray_.commandbot.bot.utils.ChatMassage;
-import me.darkcray_.commandbot.bot.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -17,12 +17,12 @@ public class CommandParser {
 
         message = message.toLowerCase().trim();
 
-        int botIndex = message.indexOf("бот");
+        int botIndex = message.indexOf(I18n.translate("commandbot.text.command_prefix"));
         if (botIndex == -1) return;
 
         String afterBot = message.substring(botIndex + 3).trim();
         if (afterBot.isEmpty()) {
-            ChatMassage.sendChatMessage("Доступные команды: " + Utils.listAllCommands());
+            ChatMassage.sendChatMessage(I18n.translate("commandbot.text.unknown_command"));
             return;
         }
 
@@ -62,7 +62,7 @@ public class CommandParser {
         }
 
         if (!foundAny) {
-            ChatMassage.sendChatMessage("Доступные команды: " + Utils.listAllCommands());
+            ChatMassage.sendChatMessage(I18n.translate("commandbot.text.unknown_command"));
         }
     }
 }

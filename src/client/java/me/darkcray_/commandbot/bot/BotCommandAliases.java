@@ -27,12 +27,12 @@ public class BotCommandAliases {
 
             Map.entry("task-18", List.of("лкм", "lc", "left-click")),
             Map.entry("task-19", List.of("пкм", "rc", "right-click")),
-            Map.entry("task-20", List.of("удар", "atk", "attack")),
+            Map.entry("task-20", List.of("удар", "ударить", "atk", "attack")),
 
-            Map.entry("task-21", List.of("присесть", "shift", "sneak")),
-            Map.entry("task-22", List.of("прыгнуть", "jmp", "jump")),
+            Map.entry("task-21", List.of("присесть", "шифт", "shift", "sneak")),
+            Map.entry("task-22", List.of("прыгнуть", "прыжок", "jmp", "jump")),
 
-            Map.entry("task-23", List.of("выбросить", "drop")),
+            Map.entry("task-23", List.of("выбросить", "выкинуть", "drop")),
 
             Map.entry("task-24", List.of("сесть", "sit")),
             Map.entry("task-25", List.of("лечь", "lay")),

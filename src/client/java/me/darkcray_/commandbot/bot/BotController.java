@@ -7,6 +7,7 @@ import me.darkcray_.commandbot.bot.actions.KeyAction;
 import me.darkcray_.commandbot.bot.utils.ChatMassage;
 import me.darkcray_.commandbot.protection.GriefProtection;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.text.Text;
 
 import java.util.ArrayDeque;
@@ -22,10 +23,10 @@ public class BotController {
                 if (KeyBinds.ENABLE_KEY.wasPressed()) {
                     if (CommandBotClient.isEnable) {
                         CommandBotClient.isEnable = false;
-                        client.inGameHud.setOverlayMessage(Text.literal("§cCommandBot выключен!"), false);
+                        client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_disable")), false);
                     } else {
                         CommandBotClient.isEnable = true;
-                        client.inGameHud.setOverlayMessage(Text.literal("§aCommandBot включен!"), false);
+                        client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_enable")), false);
                     }
                 }
             }
@@ -36,7 +37,7 @@ public class BotController {
     public static void enqueue(BotAction action, CommandType type) {
         if (type == CommandType.CLICK) {
             if (GriefProtection.isForbiddenAction()) {
-                ChatMassage.sendChatMessage("Данное действие запрещено программой!");
+                ChatMassage.sendChatMessage(I18n.translate("commandbot.text.blocked"));
                 return;
             }
         }

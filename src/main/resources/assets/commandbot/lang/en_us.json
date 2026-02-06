@@ -1,0 +1,8 @@
+{
+  "commandbot.settings.enable_key": "§6CommandBot - On/Off",
+  "commandbot.text.command_prefix": "bot",
+  "commandbot.text.bot_enable": "§aCommandBot enabled!",
+  "commandbot.text.bot_disable": "§cCommandBot disabled!",
+  "commandbot.text.blocked": "This action is prohibited by the program!",
+  "commandbot.text.unknown_command": "Unknown command!"
+}

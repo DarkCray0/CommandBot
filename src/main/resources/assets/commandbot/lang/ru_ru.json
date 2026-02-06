@@ -1,3 +1,8 @@
 {
-  "commandbot.settings.enable_key": "§6CommandBot - Вкл/Выкл"
+  "commandbot.settings.enable_key": "§6CommandBot - Вкл/Выкл",
+  "commandbot.text.command_prefix": "бот",
+  "commandbot.text.bot_enable": "§aCommandBot включен!",
+  "commandbot.text.bot_disable": "§cCommandBot выключен!",
+  "commandbot.text.blocked": "Данное действие запрещено программой!",
+  "commandbot.text.unknown_command": "Неизвестная команда!"
 }

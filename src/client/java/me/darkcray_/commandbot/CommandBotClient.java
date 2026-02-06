@@ -11,9 +11,12 @@ public class CommandBotClient implements ClientModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+    public static Boolean isEnable = false;
+
     @Override
     public void onInitializeClient() {
         LOGGER.info("CommandBot loaded!");
+        KeyBinds.register();
         BotController.init();
     }
 }

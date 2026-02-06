@@ -1,5 +1,6 @@
 package me.darkcray_.commandbot.mixin;
 
+import me.darkcray_.commandbot.CommandBotClient;
 import me.darkcray_.commandbot.bot.BotController;
 import me.darkcray_.commandbot.bot.CommandParser;
 import net.minecraft.client.network.message.MessageHandler;
@@ -13,6 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class OnChatMessage {
     @Inject(method = "onGameMessage(Lnet/minecraft/text/Text;Z)V", at = @At("HEAD"))
     public void onGameMessage(Text message, boolean overlay, CallbackInfo info) {
-        CommandParser.parse(message.getString().toLowerCase());
+        if (CommandBotClient.isEnable) CommandParser.parse(message.getString().toLowerCase());
     }
 }

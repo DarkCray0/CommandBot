@@ -1,32 +1,68 @@
 package me.darkcray_.commandbot.bot;
 
+import me.darkcray_.commandbot.bot.utils.ChatMassage;
+import me.darkcray_.commandbot.bot.utils.Utils;
+
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class CommandParser {
+
+    private static final Pattern COMMAND_PATTERN =
+            Pattern.compile("([а-яa-z0-9\\-]+)(?:\\((\\d+)\\))?");
+
     public static void parse(String message) {
-        message = message.toLowerCase();
+        if (message == null) return;
 
-        for (BotCommand cmd : BotCommand.COMMANDS) {
-            if (message.contains(cmd.keyword())) {
+        message = message.toLowerCase().trim();
 
-                int repeats = extractRepeats(message, cmd.keyword());
-                repeats = Math.min(repeats, 20);
+        int botIndex = message.indexOf("бот");
+        if (botIndex == -1) return;
 
-                BotController.enqueue(cmd.createAction(repeats), cmd.type());
-                break;
-            }
+        String afterBot = message.substring(botIndex + 3).trim();
+        if (afterBot.isEmpty()) {
+            ChatMassage.sendChatMessage("Доступные команды: " + Utils.listAllCommands());
+            return;
         }
-    }
 
-    private static int extractRepeats(String msg, String keyword) {
-        String[] parts = msg.split("\\s+");
+        String[] parts = afterBot.split(",");
 
-        for (int i = 0; i < parts.length - 1; i++) {
-            if (parts[i].equals(keyword)) {
+        boolean foundAny = false;
+
+        for (String part : parts) {
+            part = part.trim();
+            if (part.isEmpty()) continue;
+
+            Matcher matcher = COMMAND_PATTERN.matcher(part);
+            if (!matcher.matches()) continue;
+
+            String keywordOrAlias = matcher.group(1);
+            int repeats = 1;
+
+            if (matcher.group(2) != null) {
                 try {
-                    return Integer.parseInt(parts[i + 1]);
+                    repeats = Integer.parseInt(matcher.group(2));
                 } catch (NumberFormatException ignored) {}
             }
+
+            repeats = Math.min(repeats, 20);
+
+            for (BotCommand cmd : BotCommand.COMMANDS) {
+                List<String> allAliases = BotCommandAliases.getAliases(cmd.keyword());
+                allAliases = new java.util.ArrayList<>(allAliases);
+                allAliases.add(cmd.keyword());
+
+                if (allAliases.contains(keywordOrAlias)) {
+                    BotController.enqueue(cmd.createAction(repeats), cmd.type());
+                    foundAny = true;
+                    break;
+                }
+            }
         }
 
-        return 1;
+        if (!foundAny) {
+            ChatMassage.sendChatMessage("Доступные команды: " + Utils.listAllCommands());
+        }
     }
 }

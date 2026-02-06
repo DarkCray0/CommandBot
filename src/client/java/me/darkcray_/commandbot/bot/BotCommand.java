@@ -17,35 +17,35 @@ public record BotCommand(
     }
 
     public static final List<BotCommand> COMMANDS = List.of(
-            new BotCommand("вперед", CommandType.MOVE, () -> BotAction.move(KeyAction.FORWARD)),
-            new BotCommand("назад", CommandType.MOVE, () -> BotAction.move(KeyAction.BACK)),
-            new BotCommand("влево", CommandType.MOVE, () -> BotAction.move(KeyAction.LEFT)),
-            new BotCommand("вправо", CommandType.MOVE, () -> BotAction.move(KeyAction.RIGHT)),
+            new BotCommand("task-1", CommandType.MOVE, () -> BotAction.move(KeyAction.FORWARD)),
+            new BotCommand("task-2", CommandType.MOVE, () -> BotAction.move(KeyAction.BACK)),
+            new BotCommand("task-3", CommandType.MOVE, () -> BotAction.move(KeyAction.LEFT)),
+            new BotCommand("task-4", CommandType.MOVE, () -> BotAction.move(KeyAction.RIGHT)),
 
-            new BotCommand("слот-1", CommandType.HOTBAR, () -> BotAction.hotbar(0)),
-            new BotCommand("слот-2", CommandType.HOTBAR, () -> BotAction.hotbar(1)),
-            new BotCommand("слот-3", CommandType.HOTBAR, () -> BotAction.hotbar(2)),
-            new BotCommand("слот-4", CommandType.HOTBAR, () -> BotAction.hotbar(3)),
-            new BotCommand("слот-5", CommandType.HOTBAR, () -> BotAction.hotbar(4)),
-            new BotCommand("слот-6", CommandType.HOTBAR, () -> BotAction.hotbar(5)),
-            new BotCommand("слот-7", CommandType.HOTBAR, () -> BotAction.hotbar(6)),
-            new BotCommand("слот-8", CommandType.HOTBAR, () -> BotAction.hotbar(7)),
-            new BotCommand("слот-9", CommandType.HOTBAR, () -> BotAction.hotbar(8)),
+            new BotCommand("task-5", CommandType.HOTBAR, () -> BotAction.hotbar(0)),
+            new BotCommand("task-6", CommandType.HOTBAR, () -> BotAction.hotbar(1)),
+            new BotCommand("task-7", CommandType.HOTBAR, () -> BotAction.hotbar(2)),
+            new BotCommand("task-8", CommandType.HOTBAR, () -> BotAction.hotbar(3)),
+            new BotCommand("task-9", CommandType.HOTBAR, () -> BotAction.hotbar(4)),
+            new BotCommand("task-10", CommandType.HOTBAR, () -> BotAction.hotbar(5)),
+            new BotCommand("task-11", CommandType.HOTBAR, () -> BotAction.hotbar(6)),
+            new BotCommand("task-12", CommandType.HOTBAR, () -> BotAction.hotbar(7)),
+            new BotCommand("task-13", CommandType.HOTBAR, () -> BotAction.hotbar(8)),
 
-            new BotCommand("налево", CommandType.CAMERA, () -> BotAction.camera(CameraAction.LEFT)),
-            new BotCommand("направо", CommandType.CAMERA, () -> BotAction.camera(CameraAction.RIGHT)),
-            new BotCommand("вверх", CommandType.CAMERA, () -> BotAction.camera(CameraAction.UP)),
-            new BotCommand("вниз", CommandType.CAMERA, () -> BotAction.camera(CameraAction.DOWN)),
+            new BotCommand("task-14", CommandType.CAMERA, () -> BotAction.camera(CameraAction.LEFT)),
+            new BotCommand("task-15", CommandType.CAMERA, () -> BotAction.camera(CameraAction.RIGHT)),
+            new BotCommand("task-16", CommandType.CAMERA, () -> BotAction.camera(CameraAction.UP)),
+            new BotCommand("task-17", CommandType.CAMERA, () -> BotAction.camera(CameraAction.DOWN)),
 
-            new BotCommand("лкм", CommandType.CLICK, BotAction::leftClick),
-            new BotCommand("пкм", CommandType.CLICK, BotAction::rightClick),
-            new BotCommand("удар", CommandType.CLICK, () -> BotAction.move(KeyAction.ATTACK)),
-            new BotCommand("присесть", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
-            new BotCommand("прыгнуть", CommandType.MOVE, () -> BotAction.move(KeyAction.JUMP)),
-            new BotCommand("выбросить", CommandType.OTHER, BotAction::drop),
+            new BotCommand("task-18", CommandType.CLICK, BotAction::leftClick),
+            new BotCommand("task-19", CommandType.CLICK, BotAction::rightClick),
+            new BotCommand("task-20", CommandType.CLICK, () -> BotAction.move(KeyAction.ATTACK)),
+            new BotCommand("task-21", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
+            new BotCommand("task-22", CommandType.MOVE, () -> BotAction.move(KeyAction.JUMP)),
+            new BotCommand("task-23", CommandType.OTHER, BotAction::drop),
 
-            new BotCommand("сесть", CommandType.CHAT, () -> BotAction.chat("gsit")),
-            new BotCommand("лечь", CommandType.CHAT, () -> BotAction.chat("glay")),
-            new BotCommand("ползти", CommandType.CHAT, () -> BotAction.chat("gcrawl"))
+            new BotCommand("task-24", CommandType.CHAT, () -> BotAction.chat("gsit")),
+            new BotCommand("task-25", CommandType.CHAT, () -> BotAction.chat("glay")),
+            new BotCommand("task-26", CommandType.CHAT, () -> BotAction.chat("gcrawl"))
     );
 }

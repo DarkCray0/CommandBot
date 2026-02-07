@@ -36,8 +36,7 @@ public class BotCommandAliases {
 
             Map.entry("task-24", List.of("сесть", "sit")),
             Map.entry("task-25", List.of("лечь", "lay")),
-            Map.entry("task-26", List.of("ползти", "crawl")),
-            Map.entry("task-27", List.of("умереть", "умри", "убейся", "kill"))
+            Map.entry("task-26", List.of("ползти", "crawl"))
     );
 
     public static List<String> getAliases(String keyword) {

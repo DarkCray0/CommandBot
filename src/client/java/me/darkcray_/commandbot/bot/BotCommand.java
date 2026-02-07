@@ -46,7 +46,6 @@ public record BotCommand(
 
             new BotCommand("task-24", CommandType.CHAT, () -> BotAction.chat("gsit")),
             new BotCommand("task-25", CommandType.CHAT, () -> BotAction.chat("glay")),
-            new BotCommand("task-26", CommandType.CHAT, () -> BotAction.chat("gcrawl")),
-            new BotCommand("task-27", CommandType.CHAT, () -> BotAction.chat("suicide"))
+            new BotCommand("task-26", CommandType.CHAT, () -> BotAction.chat("gcrawl"))
     );
 }

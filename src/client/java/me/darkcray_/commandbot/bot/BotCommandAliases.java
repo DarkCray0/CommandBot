@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class BotCommandAliases {
     public static final Map<String, List<String>> ALIASES = Map.ofEntries(
-            Map.entry("task-1", List.of("вперед", "вп", "forward", "fwd")),
+            Map.entry("task-1", List.of("вперед", "вперёд", "вп", "forward", "fwd")),
             Map.entry("task-2", List.of("назад", "нз", "back", "bk")),
             Map.entry("task-3", List.of("влево", "вл", "left", "lt")),
             Map.entry("task-4", List.of("вправо", "вп", "right", "rt")),

@@ -1,6 +1,9 @@
 package me.darkcray_.commandbot.bot.actions;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 
 public class BotAction {
     private int ticksLeft;
@@ -35,6 +38,20 @@ public class BotAction {
                 () -> {
                     assert MinecraftClient.getInstance().player != null;
                     MinecraftClient.getInstance().player.dropSelectedItem(true);
+                },
+                () -> {}, false
+        );
+    }
+
+    public static BotAction attack() {
+        return new BotAction(2,
+                () -> {
+                    assert MinecraftClient.getInstance().player != null;
+                    HitResult hit = MinecraftClient.getInstance().crosshairTarget;
+                    if (hit instanceof EntityHitResult entityHit) {
+                        Entity entity = entityHit.getEntity();
+                        MinecraftClient.getInstance().interactionManager.attackEntity(MinecraftClient.getInstance().player, entity);
+                    }
                 },
                 () -> {}, false
         );

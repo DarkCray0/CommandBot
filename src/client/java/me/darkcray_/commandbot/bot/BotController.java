@@ -21,14 +21,13 @@ public class BotController {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (KeyBinds.ENABLE_KEY != null) {
                 if (KeyBinds.ENABLE_KEY.wasPressed()) {
-                    if (CommandBotClient.isEnable) {
-                        CommandBotClient.isEnable = false;
-                        client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_disable")), false);
-                    } else {
-                        CommandBotClient.isEnable = true;
-                        client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_enable")), false);
-                    }
+                    CommandBotClient.isEnable = !CommandBotClient.isEnable;
                 }
+            }
+            if (CommandBotClient.isEnable) {
+                client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_enable")), false);
+            } else {
+                client.inGameHud.setOverlayMessage(Text.literal(I18n.translate("commandbot.text.bot_disable")), false);
             }
             if (CommandBotClient.isEnable) tick();
         });

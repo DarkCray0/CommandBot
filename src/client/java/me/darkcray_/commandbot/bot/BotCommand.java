@@ -39,7 +39,7 @@ public record BotCommand(
 
             new BotCommand("task-18", CommandType.CLICK, BotAction::leftClick),
             new BotCommand("task-19", CommandType.CLICK, BotAction::rightClick),
-            new BotCommand("task-20", CommandType.CLICK, () -> BotAction.move(KeyAction.ATTACK)),
+            new BotCommand("task-20", CommandType.CLICK, BotAction::attack),
             new BotCommand("task-21", CommandType.MOVE, () -> BotAction.move(KeyAction.SHIFT)),
             new BotCommand("task-22", CommandType.MOVE, () -> BotAction.move(KeyAction.JUMP)),
             new BotCommand("task-23", CommandType.OTHER, BotAction::drop),

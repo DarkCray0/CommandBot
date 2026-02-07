@@ -53,7 +53,7 @@ public class BotAction {
                         MinecraftClient.getInstance().interactionManager.attackEntity(MinecraftClient.getInstance().player, entity);
                     }
                 },
-                () -> {}, false
+                () -> {}, true
         );
     }
 

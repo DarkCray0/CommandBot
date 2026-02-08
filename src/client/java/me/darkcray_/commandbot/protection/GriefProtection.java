@@ -28,7 +28,6 @@ public class GriefProtection {
     private static final Set<Block> FORBIDDEN_BLOCKS = Set.of(
             Blocks.RESPAWN_ANCHOR,
             Blocks.TNT,
-            // Хранилища
             Blocks.CHEST,
             Blocks.TRAPPED_CHEST,
             Blocks.BARREL,
@@ -50,7 +49,6 @@ public class GriefProtection {
             Blocks.GREEN_SHULKER_BOX,
             Blocks.RED_SHULKER_BOX,
             Blocks.BLACK_SHULKER_BOX,
-            // Механизмы и производство
             Blocks.FURNACE,
             Blocks.BLAST_FURNACE,
             Blocks.SMOKER,
@@ -59,7 +57,6 @@ public class GriefProtection {
             Blocks.DISPENSER,
             Blocks.DROPPER,
             Blocks.CRAFTER,
-            // Рабочие столы
             Blocks.CRAFTING_TABLE,
             Blocks.ANVIL,
             Blocks.CHIPPED_ANVIL,
@@ -70,16 +67,13 @@ public class GriefProtection {
             Blocks.SMITHING_TABLE,
             Blocks.STONECUTTER,
             Blocks.ENCHANTING_TABLE,
-            // Прочее с GUI
             Blocks.BEACON,
             Blocks.LECTERN,
-            // Технические блоки
             Blocks.COMMAND_BLOCK,
             Blocks.CHAIN_COMMAND_BLOCK,
             Blocks.REPEATING_COMMAND_BLOCK,
             Blocks.STRUCTURE_BLOCK,
             Blocks.JIGSAW,
-            // Кровати
             Blocks.WHITE_BED,
             Blocks.ORANGE_BED,
             Blocks.MAGENTA_BED,
@@ -102,11 +96,9 @@ public class GriefProtection {
             EntityType.END_CRYSTAL,
             EntityType.TNT_MINECART,
             EntityType.ARMOR_STAND,
-            // Мобы на которых можно экипировать сундук
             EntityType.MULE,
             EntityType.LLAMA,
             EntityType.TRADER_LLAMA,
-            // Транспортные средства с инвентарем
             EntityType.CHEST_MINECART,
             EntityType.HOPPER_MINECART,
             EntityType.OAK_CHEST_BOAT,
